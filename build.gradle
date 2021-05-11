@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.ji'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.21.Final'
+	implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.4'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
